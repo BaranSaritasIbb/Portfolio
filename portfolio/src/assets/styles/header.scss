@@ -1,0 +1,26 @@
+.header {
+    justify-content: center;
+    display: flex;
+    height: auto;
+    align-items: center;
+    padding: 40px 0px 20px 0px;
+
+    h1 {
+        color: #7c795d;
+        font-family: 'Trocchi', serif;
+        font-size: 45px;
+        font-weight: normal;
+        line-height: 48px;
+        margin: 0;
+    }
+
+    .header-title {
+        width: 30%;
+        height: 70%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 23px;
+    }
+}
