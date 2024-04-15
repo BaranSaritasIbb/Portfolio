@@ -1,13 +1,18 @@
 import React from 'react'
 import portre from "../../assets/image/portre.jpg";
 import Portfolio from '../portfolio/Portfolio';
+import ImageZoom from "react-image-zooom";
+
 export default function DashboardPage() {
     return (
         <div className='dashboard'>
 
             <div className='person-promotion'>
                 <div className='person-image'>
-                    <img src={portre} alt="" />
+                    {/* <img src={portre} alt="" /> */}
+
+                    <ImageZoom className='img-dashboard' src={portre} alt="A image to apply the ImageZoom plugin" zoom="200" />
+
                 </div>
                 <div className='person-information'>
                     <h2>Merhaba!</h2>
