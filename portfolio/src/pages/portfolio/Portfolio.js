@@ -8,7 +8,34 @@ export default function Portfolio() {
     const [imgLink, setImgLink] = useState("");
     const [imgLinkCount, setImgLinkCount] = useState(0);
 
-    const [backgroundColor, setBackgroundColor] = useState('rgba(255, 255, 255, 0.7)'); // Varsayılan arka plan rengi
+    const [backgroundColor, setBackgroundColor] = useState('rgba(255, 255, 255, 0.7)');
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        if (!isVisible) {
+            const timer = setTimeout(() => {
+                setIsVisible(false);
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [isVisible]);
+
+    const handleClose = () => {
+        setIsVisible(false);
+    };
+    const handleImageClick = (newImgLink, count) => {
+        setImgLink(newImgLink);
+        setImgLinkCount(count);
+        setIsVisible(true);
+        scrollToDiv();
+    };
+
+    const scrollToDiv = () => {
+        const element = document.getElementById('portfolio-body-selected');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     useEffect(() => {
         const getImageColors = async () => {
@@ -48,61 +75,57 @@ export default function Portfolio() {
         <div className='portfolio'>
             <h1> Portfolio</h1>
 
-            <div className='portfolio-body-selected'>
-
-                <div style={{ backgroundColor: backgroundColor }} className='portfolio-body-selected-img'>
+            <div id='portfolio-body-selected' className={(isVisible && imgLink) ? 'portfolio-body-selected' : 'portfolio-body-selected hidden'}>
+                <div className='portfolio-body-selected-img' style={{ backgroundColor: backgroundColor }}>
                     <img src={imgLink} alt="" />
-                </div>
-                <div className='portfolio-body-selected-text'>
-                    text
-                </div>
-                <a href="#" class="close" />
-            </div>
 
+                </div>
+                <a className="close" onClick={handleClose}></a>
+
+            </div>
             <div className='portfolio-body'>
 
                 <div className='portfolio-line'>
-                    <div onClick={() => { setImgLink(portre1); setImgLinkCount(1); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre1, 1)} className='portfolio-line-img'>
                         <img src={portre1} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre2); setImgLinkCount(2); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre2, 2)} className='portfolio-line-img'>
                         <img src={portre2} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre4); setImgLinkCount(4); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre4, 4)} className='portfolio-line-img'>
                         <img src={portre4} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre3); setImgLinkCount(3); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre3, 3)} className='portfolio-line-img'>
                         <img src={portre3} alt="" />
                     </div>
                 </div>
                 <div className='portfolio-line'>
-                    <div onClick={() => { setImgLink(portre4); setImgLinkCount(4); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre4, 4)} className='portfolio-line-img'>
                         <img src={portre4} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre3); setImgLinkCount(3); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre3, 3)} className='portfolio-line-img'>
                         <img src={portre3} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre1); setImgLinkCount(1); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre1, 1)} className='portfolio-line-img'>
                         <img src={portre1} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre4); setImgLinkCount(4); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre4, 4)} className='portfolio-line-img'>
                         <img src={portre4} alt="" />
                     </div>
                 </div>
                 <div className='portfolio-line'>
-                    <div onClick={() => { setImgLink(portre4); setImgLinkCount(4); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre4, 4)} className='portfolio-line-img'>
                         <img src={portre4} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre1); setImgLinkCount(1); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre1, 1)} className='portfolio-line-img'>
                         <img src={portre1} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre2); setImgLinkCount(2); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre2, 2)} className='portfolio-line-img'>
                         <img src={portre2} alt="" />
                     </div>
-                    <div onClick={() => { setImgLink(portre3); setImgLinkCount(3); }} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre3, 3)} className='portfolio-line-img'>
                         <img src={portre3} alt="" />
                     </div>
-
                 </div>
 
             </div>

@@ -11,12 +11,26 @@
         height: auto;
         display: flex;
         justify-content: center;
+        overflow: hidden;
         flex-direction: row;
-        //border-left: 1px solid black !important;
-        border: 1px solid black !important;
-        // background-color: silver;
+        transition: opacity 0.5s ease;
+        border: 1px solid #7c795d !important;
         border-radius: 10px;
         margin: 10px 0px 10px 0px;
+        animation: slides 0.5s linear forwards;
+        opacity: 0;
+
+        @keyframes slides {
+            0% {
+                bottom: 100%;
+            }
+
+            100% {
+                bottom: 0%;
+                opacity: 1;
+
+            }
+        }
 
         .portfolio-body-selected-img {
             width: 100%;
@@ -42,6 +56,35 @@
         height: 32px;
         opacity: 3;
     }
+
+    .hidden {
+        position: relative;
+        background-position: center;
+        width: 100%;
+        height: auto;
+        bottom: 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: slide 0.5s linear forwards;
+        opacity: 1;
+        pointer-events: none;
+        /* Gizlendiğinde tıklamaları engelle */
+        /* Başlangıçta görünür */
+
+        @keyframes slide {
+            0% {
+                bottom: 100%;
+            }
+
+            100% {
+                bottom: 0%;
+                opacity: 0;
+                display: none;
+
+            }
+        }
+    }
+
 
     .close:hover {
         opacity: 1;
