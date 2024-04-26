@@ -13,7 +13,7 @@ export default function Portfolio() {
     const [backgroundColor, setBackgroundColor] = useState('rgba(255, 255, 255, 0.7)');
     const [isVisible, setIsVisible] = useState(true);
     const [hovered, setHovered] = useState({});
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState(null);
 
     const handleTabClick = (index) => {
         setActiveTab(index);
@@ -33,7 +33,13 @@ export default function Portfolio() {
 
     }, [backgroundColor]);
 
+    useEffect(() => {
 
+        if (activeTab == null) {
+            setActiveTab(0);
+        }
+
+    }, []);
 
     const scrollToDiv = () => {
         const element = document.getElementById('portfolio-body-selected');
@@ -106,9 +112,9 @@ export default function Portfolio() {
 
             <div className='portfolio-body'>
 
-                {/* tab burada olusacak ve elementleri icine atmaya baslicam  */}
                 <div>
                     <div className="tab-list">
+
                         <button key={0}
                             className={0 === activeTab ? 'active-tab buttonx buttonx-4' : 'buttonx buttonx-4'}
                             onClick={() => handleTabClick(0)} class="buttonx buttonx-4">
@@ -128,11 +134,11 @@ export default function Portfolio() {
                             Reklam
                         </button>
 
+
                     </div>
 
 
-
-                    <div className="tab-content">
+                    < div className="tab-content">
                         <div style={{ display: activeTab === 0 ? 'block' : 'none' }}>   <LogoTab /> </div>
                         <div style={{ display: activeTab === 1 ? 'block' : 'none' }}> <UxUi /></div>
                         <div style={{ display: activeTab === 2 ? 'block' : 'none' }}>Tab 3 Content</div>
@@ -140,6 +146,6 @@ export default function Portfolio() {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }

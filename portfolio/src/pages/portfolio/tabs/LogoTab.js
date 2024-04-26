@@ -16,7 +16,7 @@ export default function LogoTab() {
 
     const pixel = 1.9;
     const [backgroundColor, setBackgroundColor] = useState('rgba(255, 255, 255, 0.7)');
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         if (!isVisible) {
@@ -112,14 +112,14 @@ export default function LogoTab() {
 
     return (
         <div>
-
-            <div id='portfolio-body-selected' className={(isVisible && imgLink) ? 'portfolio-body-selected' : 'portfolio-body-selected hidden'}>
-                <div className='portfolio-body-selected-img' style={{ background: backgroundColor }} >
-                    {/* <img src={imgLink} alt="" /> */}
-                    <ImageZoom className='img-portfolio' src={imgLink ? imgLink : portre4} alt="A image to apply the ImageZoom plugin" zoom="200" />
-                </div>
-                <a className="close" onClick={handleClose}></a>
-            </div>
+            {(isVisible && imgLink != "") ?
+                <div id='portfolio-body-selected' className={(isVisible && imgLink != "") ? 'portfolio-body-selected' : 'portfolio-body-selected hidden'}>
+                    <div className='portfolio-body-selected-img' style={{ background: backgroundColor }} >
+                        {/* <img src={imgLink} alt="" /> */}
+                        <ImageZoom className='img-portfolio' src={imgLink ? imgLink : portre4} alt="A image to apply the ImageZoom plugin" zoom="200" />
+                    </div>
+                    <a className="close" onClick={handleClose}></a>
+                </div> : null}
             <div className='portfolio-body'>
 
                 <div className='portfolio-line'>

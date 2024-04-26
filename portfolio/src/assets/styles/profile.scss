@@ -1,0 +1,185 @@
+.box-profile {
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://github.com/Khyes/image_dump/blob/main/bg.jpg?raw=true);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-profile {
+    width: 300px;
+    min-height: 500px;
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+:root {
+    --color-1: rgba(255, 255, 255, 0.1);
+    --color-2: rgba(255, 255, 255, 0.5);
+    --color-3: rgba(255, 255, 255, 0.75);
+    --color-4: rgba(0, 0, 0, 0.05);
+    --color-5: #644651;
+    --color-6: #fff;
+    --color-7: #040a29;
+    --color-8: rgba(255, 255, 255, 0.075);
+    --x: 45deg;
+}
+
+.box-profile .card-profile {
+    position: relative;
+    background: var(--color-1);
+    width: 300px;
+    min-height: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-2);
+    border-top: 1px solid var(--color-3);
+    border-left: 1px solid var(--color-3);
+    border-radius: 20px;
+    box-shadow: 0 25px 45px var(--color-4);
+    transform-style: preserve-3d;
+}
+
+.elements {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: var(--color-1);
+    transform: translateZ(80px);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-2);
+    border-top: 1px solid var(--color-3);
+    border-left: 1px solid var(--color-3);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px var(--color-4);
+}
+
+.elements.bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(https://github.com/Khyes/image_dump/blob/main/left-quote.png?raw=true);
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: 0.9s;
+}
+
+.box-profile:hover .elements.bg::before {
+    opacity: 1;
+}
+
+.elements.imgBx {
+    top: -20px;
+    left: initial;
+    right: 10px;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    transform: translateZ(120px);
+}
+
+.elements.imgBx img {
+    position: absolute;
+    width: calc(100% - 20px);
+    right: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--color-2);
+    border-top: 1px solid var(--color-3);
+    border-left: 1px solid var(--color-3);
+    box-shadow: 0 25px 45px var(--color-4);
+    opacity: 1;
+    transition: 0.8s;
+    animation: imgA 1s normal;
+}
+
+
+
+
+
+.elements.name {
+    top: 165px;
+    left: initial;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    transform: translateZ(100px);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border: none;
+    box-shadow: none;
+    color: var(--color-5);
+    opacity: 1;
+    //element
+    animation: element 1s normal;
+}
+
+
+.elements.content {
+    top: 230px;
+    left: initial;
+    bottom: 0;
+    right: -40px;
+    width: 85%;
+    min-height: 200px;
+    padding: 10px;
+    transform: translateZ(180px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elements.content p {
+    position: relative;
+    color: var(--color-5);
+    font-size: 0.85em;
+    transition: 0.8s;
+    opacity: 1;
+    animation: content 1s normal;
+}
+
+
+@keyframes content {
+    50% {
+
+        opacity: 0;
+
+    }
+}
+
+@keyframes imgA {
+    50% {
+
+        opacity: 0;
+
+    }
+}
+
+@keyframes content {
+    50% {
+
+        opacity: 0;
+
+    }
+}
+
+@keyframes element {
+    50% {
+        top: 235px;
+        opacity: 0;
+
+    }
+}
