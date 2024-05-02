@@ -2,7 +2,7 @@ import React from 'react'
 import portre from "../../assets/image/portre.jpg";
 import Portfolio from '../portfolio/Portfolio';
 import ImageZoom from "react-image-zooom";
-import ProfileCard from '../../components/ProfileCard';
+import ProfileCard from '../../layout/components/ProfileCard';
 
 export default function DashboardPage() {
     return (

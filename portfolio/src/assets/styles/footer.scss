@@ -1,20 +1,57 @@
 .footer {
     width: 100%;
-    background-color: black !important;
+    position: fixed;
+    z-index: 1000;
+    align-items: center;
+    margin: 20px;
+
     padding: 0px 0px 0px 0px;
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     bottom: 0;
     width: 100%;
+}
+
+.line2 {
+
+    left: 0%;
+    top: 50% !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 30%;
+    /* Çizginin kalınlığını ayarlayabilirsiniz */
+    height: 3px;
+    /* Div'in yüksekliği kadar olacak şekilde ayarlayın */
+    background-color: black;
+    /* Çizgi rengi */
+}
+
+.line {
+
+    left: 0%;
+    top: 50% !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* Çizginin kalınlığını ayarlayabilirsiniz */
+    height: 3px;
+    /* Div'in yüksekliği kadar olacak şekilde ayarlayın */
+    background-color: black;
+    /* Çizgi rengi */
 }
 
 .footer-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 100%;
+    z-index: 10;
+
+    width: 50%;
     margin: 0px 0px 0px 0px;
 
     img {
@@ -47,8 +84,9 @@
     }
 
     .custom-icon {
-        color: #7c795d;
-        font-size: 30;
+        color: #222ed4;
+
+        width: 30px;
         height: 100%;
     }
 }
