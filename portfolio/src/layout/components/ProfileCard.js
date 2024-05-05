@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
-export default function ProfileCard() {
+export default function ProfileCard(props) {
+
+
     return (
 
         <div class="box-profile">

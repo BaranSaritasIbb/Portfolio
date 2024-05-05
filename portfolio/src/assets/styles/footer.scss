@@ -13,6 +13,24 @@
     width: 100%;
 }
 
+.FooterWrapper {
+    /* Footer'ın varsayılan stilleri */
+    opacity: 1;
+    /* Başlangıçta görünür */
+    transition: all 550ms ease !important;
+    /* Geçiş efekti */
+}
+
+.hide {
+    opacity: 0;
+    /* Görünürlüğü sıfırla */
+}
+
+.show {
+    opacity: 1;
+    /* Görünürlüğü geri getir */
+}
+
 .line2 {
 
     left: 0%;
@@ -50,13 +68,13 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-
+    gap: 10%;
     width: 50%;
     margin: 0px 0px 0px 0px;
 
     img {
-        background-color: #7c795d;
-        width: 7%;
+        // background-color: #7c795d;
+        width: 10%;
 
 
     }

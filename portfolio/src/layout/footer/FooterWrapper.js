@@ -2,30 +2,40 @@ import React from 'react'
 import { FaSlash } from "react-icons/fa";
 import { TbBackslash } from "react-icons/tb";
 
-import twitterIcon from "../../assets/icons/tw.png";
-import facebookIcon from "../../assets/icons/face.png";
-import dribbbleIcon from "../../assets/icons/dribble.png";
-import instagramIcon from "../../assets/icons/instagram.png";
-import behanceIcon from "../../assets/icons/behance.png";
+import facebookIconL from "../../assets/icons/facebook1.svg";
+import facebookIconD from "../../assets/icons/facebook2.svg";
+import instaIconL from "../../assets/icons/insta1.svg";
+import instaIconD from "../../assets/icons/insta2.svg";
+import linkedinIconL from "../../assets/icons/linkedin1.svg";
+import linkedinIconD from "../../assets/icons/linkedin2.svg";
+import pinIconL from "../../assets/icons/pin1.svg";
+import pinIconD from "../../assets/icons/pin2.svg";
+import youtubeIconL from "../../assets/icons/youtube1.svg";
+import youtubeIconD from "../../assets/icons/youtube2.svg";
+
 import { SlSocialBehance, SlSocialDribbble, SlSocialInstagram, SlSocialTwitter, SlSocialPintarest } from "react-icons/sl";
 
-export default function FooterWrapper() {
+export default function FooterWrapper(props) {
     return (
-        <div className='footer'>
+        <div className={props.showFooter ? 'show footer' : 'hide footer'} >
             <div class="line2"></div>
             <div className='footer-top'>
-                <SlSocialBehance size={50} />
-                <div><TbBackslash className="custom-icon" /></div>
-                <SlSocialDribbble size={50} />
-                <div><TbBackslash className="custom-icon" /></div>
-                <SlSocialInstagram size={50} />
-                <div><TbBackslash className="custom-icon" /></div>
-                <SlSocialTwitter size={50} />
-                <div><TbBackslash className="custom-icon" /></div>
-                <SlSocialPintarest size={50} />
+                <img src={facebookIconD} alt="" />
+                <img src={instaIconD} alt="" />
+                <img src={linkedinIconD} alt="" />
+                <img src={pinIconD} alt="" />
+                <img src={youtubeIconD} alt="" />
             </div>
             <div class="line"></div>
 
         </div>
     );
 }
+/*
+            <facebookIconL />
+                <instaIconL />
+                <linkedinIconL />
+
+                <pinIconL />
+                <youtubeIconL />
+                */
