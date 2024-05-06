@@ -17,15 +17,31 @@ import { SlSocialBehance, SlSocialDribbble, SlSocialInstagram, SlSocialTwitter, 
 
 export default function FooterWrapper(props) {
     return (
+
         <div className={props.showFooter ? 'show footer' : 'hide footer'} >
             <div class="line2"></div>
-            <div className='footer-top'>
-                <img src={facebookIconD} alt="" />
-                <img src={instaIconD} alt="" />
-                <img src={linkedinIconD} alt="" />
-                <img src={pinIconD} alt="" />
-                <img src={youtubeIconD} alt="" />
-            </div>
+
+            {props.showFooterL ? (
+
+                <div className='footer-top'>
+                    <img src={facebookIconL} alt="" />
+                    <img src={instaIconL} alt="" />
+                    <img src={linkedinIconL} alt="" />
+                    <img src={pinIconL} alt="" />
+                    <img src={youtubeIconL} alt="" />
+                </div>
+            ) : props.showFooterD ? (
+                <div className='footer-top'>
+                    <img src={facebookIconD} alt="" />
+                    <img src={instaIconD} alt="" />
+                    <img src={linkedinIconD} alt="" />
+                    <img src={pinIconD} alt="" />
+                    <img src={youtubeIconD} alt="" />
+                </div>
+            ) : null}
+
+
+
             <div class="line"></div>
 
         </div>

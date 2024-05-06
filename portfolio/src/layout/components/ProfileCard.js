@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 
-export default function ProfileCard(props) {
+export default function ProfileCard() {
 
 
     return (
