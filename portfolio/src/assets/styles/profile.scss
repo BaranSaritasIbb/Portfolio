@@ -3,13 +3,23 @@
     border-radius: 20px;
     transform-style: preserve-3d;
 }
+.profile-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .header{
+        width: 100%;
+    }
+}
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(https://github.com/Khyes/image_dump/blob/main/bg.jpg?raw=true);
+   // background: url(https://github.com/Khyes/image_dump/blob/main/bg.jpg?raw=true);
     background-size: cover;
     background-position: center;
 }

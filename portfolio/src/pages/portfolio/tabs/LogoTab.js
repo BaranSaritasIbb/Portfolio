@@ -74,7 +74,7 @@ export default function LogoTab() {
                 let rightColors = { r: 0, g: 0, b: 0 };
 
                 // Resmin sol ve sağ kenarlarındaki belirli bölgenin genişliğini belirler
-                const middleX = Math.floor(img.width / 6);
+                const middleX = Math.floor(img.width / 2);
 
                 // Her piksel için resmin sol ve sağ kenarlarındaki belirli bölgedeki renkleri toplar
                 for (let y = 0; y < img.height; y++) {
@@ -92,7 +92,7 @@ export default function LogoTab() {
                     }
                 }
 
-                const totalPixels = img.width * img.height;
+                const totalPixels = img.width * img.height ;
                 // Resmin sol ve sağ kenarlarındaki belirli bölgedeki renklerin ortalamalarını hesaplar
                 const leftAvgR = Math.floor(leftColors.r / totalPixels);
                 const leftAvgG = Math.floor(leftColors.g / totalPixels);

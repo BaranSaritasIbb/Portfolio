@@ -1,30 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import portre from "../../assets/image/portre.jpg";
 import Portfolio from '../portfolio/Portfolio';
 import ImageZoom from "react-image-zooom";
 import ProfileCard from '../../layout/components/ProfileCard';
 
-export default function DashboardPage() {
-    // props.showFooter
+export default function DashboardPage({ currentSection }) {
+  useEffect(() => {
+    const sections = document.querySelectorAll(".section");
+    let current = null;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollTop >= sectionTop - 50 && scrollTop < sectionTop + sectionHeight - 50) {
+        current = section;
+      }
+    });
 
-    return (
-        <div className='dashboard'>
+    if (current) {
+      console.log("Current Section:", current.getAttribute("id"));
+    }
+  }, [currentSection]);
 
-            <div className='person-promotion'>
-
-                <div className='person-image'>
-                    <ProfileCard />
-                    {/* <img src={portre} alt="" /> */}
-
-                    {/* <ImageZoom className='img-dashboard' src={portre} alt="A image to apply the ImageZoom plugin" zoom="200" /> */}
-
-                </div>
-
-            </div>
-            <div className='portfolio-div'  >
-                <Portfolio />
-            </div>
+  return (
+    <div className='dashboard'>
+      <div id="header" className='person-promotion section'>
+        <div className='person-image'>
+          <ProfileCard />
         </div>
-    )
+      </div>
+      <div id="portfolio-div" className='portfolio-div section'>
+        <Portfolio />
+      </div>
+    </div>
+  );
 }
