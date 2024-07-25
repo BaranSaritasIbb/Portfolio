@@ -3,6 +3,7 @@ import portre from "../../assets/image/portre.jpg";
 import Portfolio from '../portfolio/Portfolio';
 import ImageZoom from "react-image-zooom";
 import ProfileCard from '../../layout/components/ProfileCard';
+import UxUi from '../portfolio/tabs/UxUi';
 
 export default function DashboardPage({ currentSection }) {
   useEffect(() => {
@@ -26,12 +27,20 @@ export default function DashboardPage({ currentSection }) {
   return (
     <div className='dashboard'>
       <div id="header" className='person-promotion section'>
+     
+                        
         <div className='person-image'>
           <ProfileCard />
         </div>
       </div>
       <div id="portfolio-div" className='portfolio-div section'>
         <Portfolio />
+      </div>
+
+      <div id= "ux-ui" className='portfolio-ux section'>
+      <h1> UX / UI</h1>
+
+        <UxUi />
       </div>
     </div>
   );

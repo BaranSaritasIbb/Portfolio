@@ -55,16 +55,18 @@ export default function Layout() {
   return (
     <div className="layout-body">
       <Sidebar currentSection={currentSection} />
+      
       <div  className="layout-body-pages section">
 
     
       <AppRoutes props={currentSection}/>
-        <FooterWrapper
+   
+      </div>
+      <FooterWrapper
           showFooter={showFooter}
           showFooterD={showFooterD}
           showFooterL={showFooterL}
         />
-      </div>
     </div>
   );
 }
@@ -73,7 +75,7 @@ function Sidebar({ currentSection }) {
   const sections = [
     { id: "header", name: "person-promotion" },
     { id: "portfolio-div", name: "portfolio-div" },
-    { id: "deneme1", name: "Deneme 1" },
+    { id: "ux-ui", name: "ux-ui" },
     { id: "deneme2", name: "Deneme 2" }
   ];
 

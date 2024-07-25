@@ -114,7 +114,8 @@ export default function LogoTab() {
         <div>
             {(isVisible && imgLink != "") ?
                 <div id='portfolio-body-selected' className={(isVisible && imgLink != "") ? 'portfolio-body-selected' : 'portfolio-body-selected hidden'}>
-                    <div className='portfolio-body-selected-img' style={{ background: backgroundColor }} >
+                    {/* style={{ background: backgroundColor }} */}
+                    <div className='portfolio-body-selected-img'  >
                         {/* <img src={imgLink} alt="" /> */}
                         <ImageZoom className='img-portfolio' src={imgLink ? imgLink : portre4} alt="A image to apply the ImageZoom plugin" zoom="200" />
                     </div>
@@ -123,7 +124,7 @@ export default function LogoTab() {
             <div className='portfolio-body'>
 
                 <div className='portfolio-line'>
-                    <div onClick={() => handleImageClick(portre7, 1)} className='portfolio-line-img'>
+                    <div onClick={() => handleImageClick(portre7, 1)} className='portfolio-line-img '>
                         <img src={portre7} alt="" />
                     </div>
                     <div onClick={() => handleImageClick(portre2, 2)} className='portfolio-line-img'>

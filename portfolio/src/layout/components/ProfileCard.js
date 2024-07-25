@@ -1,8 +1,26 @@
 import React, { useEffect } from "react";
 
-export default function ProfileCard() {
+export default function ProfileCard({currentSection}) {
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".section");
+    let current = null;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollTop >= sectionTop - 10 && scrollTop < sectionTop + sectionHeight - 10) {
+        current = section;
+      }
+    });
+
+    if (current) {
+      console.log("Current Section:", current.getAttribute("id"));
+    }
+  }, [currentSection]);
   return (
-    <div className="profile-body">
+    <div  className="profile-body">
       <div  className="header">
         <h1 className="header-title"> Baran Sarıtaş</h1>
       </div>

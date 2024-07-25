@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ImageZoom from "react-image-zooom";
 import LogoTab from "./tabs/LogoTab";
 import UxUi from "./tabs/UxUi";
-export default function Portfolio() {
+export default function Portfolio({currentSection}) {
   const [imgLink, setImgLink] = useState("");
   const [imgLinkCount, setImgLinkCount] = useState(0);
 
@@ -45,12 +45,12 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="portfolio">
+    <div  className="portfolio">
       <h1> Portfolio</h1>
 
       <div className="portfolio-body">
         <LogoTab />
-        <UxUi />
+        
       </div>
     </div>
   );

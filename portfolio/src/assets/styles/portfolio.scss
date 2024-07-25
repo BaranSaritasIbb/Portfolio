@@ -48,8 +48,9 @@
         }
 
         .portfolio-body-selected-img {
-            width: 100%;
-            height: 600px;
+            //width: 100%;
+            //height: 600px;
+            max-height: 600px;
             display: flex;
             justify-content: center;
 
@@ -175,21 +176,22 @@
 
 .ui-line {
     width: 100%;
+    margin:40px 0px 150px 0px;
 
     .card {
-        width: 100%;
+        width: 90%;
+        margin: 5% ;
     }
 }
 
 
 .card {
-    width: 210px;
+    width: 100%;
     height: 754px;
     border-radius: 4px;
     background: #212121;
     display: flex;
     gap: 5px;
-    padding: .4em;
 }
 
 .card p {
@@ -204,6 +206,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    img{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .card p:hover {
@@ -288,8 +294,64 @@
     z-index: -10;
 }
 
-.buttonx-4:hover:after {
-    left: 120%;
+
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    background: #D3D3D3;
+    width: 100%;
+    z-index: 1;
+    color: #928d5c;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 0 2em;
+    max-width: 160px;
+    position: relative;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+
+    .icon-card:hover {
+        background: #D3D3D3;
+        color: #928d5c;
+        text-decoration: none;
+    }
+}
+
+.icon-card-4 {
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+}
+
+.icon-card-4 span {
+    z-index: 120;
+}
+
+.icon-card-4:after {
+    transition: all 0.7s ease !important;
+    background: #f3e6e6;
+    content: "";
+    height: 700px;
+    left: -235px;
+    opacity: 0.4;
+    position: absolute;
+    top: -90px;
+    transform: rotate(35deg);
+    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: 1000;
+}
+
+.icon-card-4:hover:after {
+    left: 220%;
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -332,6 +394,7 @@
         border-radius: 20px;
         transition: 700ms;
         background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(57, 47, 196) 46%, rgb(255, 204, 112) 100%);
+       
     }
 
     .subtitle {
