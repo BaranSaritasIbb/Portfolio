@@ -1,0 +1,63 @@
+
+.logos{
+    width: 90%;
+    margin: 5%;
+}
+
+.logo-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  flex-direction: column;
+  margin: 40px 0px 150px 0px;
+  .logo-image{
+    height: 250px;
+    overflow: hidden;
+  }
+  .logo-top-row {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+ 
+    
+    .logo-top-text {
+
+        grid-column: 1;
+        grid-row: 1  ;
+      h1 {
+        color: black !important;
+      }
+    }
+
+  
+  }
+}
+
+
+.logo-top-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);   
+     gap: 10px;
+     
+}
+
+.logo-image img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    &:hover{
+        filter: none;
+    }
+}

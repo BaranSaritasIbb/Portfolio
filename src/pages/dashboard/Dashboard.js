@@ -4,6 +4,7 @@ import Portfolio from '../portfolio/Portfolio';
 import ImageZoom from "react-image-zooom";
 import ProfileCard from '../../layout/components/ProfileCard';
 import UxUi from '../portfolio/tabs/UxUi';
+import Logo from '../portfolio/tabs/Logo';
 
 export default function DashboardPage({ currentSection }) {
   useEffect(() => {
@@ -41,6 +42,12 @@ export default function DashboardPage({ currentSection }) {
       <h1> UX / UI</h1>
 
         <UxUi />
+      </div>
+      
+      <div id= "Logo" className='logos section'>
+      <h1> Logo</h1>
+
+        <Logo />
       </div>
     </div>
   );
